@@ -6,6 +6,16 @@ description = "Starter for logging using Logback. Default logging starter"
 
 dependencies {
 	api("ch.qos.logback:logback-classic")
-	api("org.apache.logging.log4j:log4j-to-slf4j")
-	api("org.slf4j:jul-to-slf4j")
+//	api("org.apache.logging.log4j:log4j-to-slf4j")
+//	api("org.slf4j:jul-to-slf4j")
+
+
+
+	// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-to-slf4j
+	compile group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.13.3'
+	// https://mvnrepository.com/artifact/org.slf4j/jul-to-slf4j
+	compile group: 'org.slf4j', name: 'jul-to-slf4j', version: '1.7.25'
+
 }

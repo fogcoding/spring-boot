@@ -9,11 +9,32 @@ plugins {
 
 description = "Spring Boot"
 
+repositories {
+	maven {
+		url "http://maven.aliyun.com/nexus/content/groups/public"
+	}
+	maven {
+		url "http://maven.aliyun.com/nexus/content/repositories/jcenter"
+	}
+
+	google()
+	jcenter()
+	mavenCentral()
+	gradlePluginPortal()
+	maven { url "https://repo.spring.io/release" }
+}
+
 dependencies {
 	annotationProcessor("org.apache.logging.log4j:log4j-core")
 
 	api("org.springframework:spring-core")
 	api("org.springframework:spring-context")
+	// 由源码构建换成开源包构建
+	// https://mvnrepository.com/artifact/org.springframework/spring-core
+//	compile group: 'org.springframework', name: 'spring-core', version: '5.2.8.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-context
+//	compile group: 'org.springframework', name: 'spring-context', version: '5.2.8.RELEASE'
+
 
 	optional("ch.qos.logback:logback-classic")
 	optional("com.atomikos:transactions-jdbc")
@@ -121,6 +142,6 @@ compileTestKotlin {
 	}
 }
 
-compileJava {
-	doLast new org.springframework.boot.build.log4j2.ReproducibleLog4j2PluginsDatAction()
-}
+//compileJava {
+//	doLast new org.springframework.boot.build.log4j2.ReproducibleLog4j2PluginsDatAction()
+//}

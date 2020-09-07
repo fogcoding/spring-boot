@@ -298,6 +298,9 @@ public class SpringApplication {
 	public ConfigurableApplicationContext run(String... args) {
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
+		System.out.println("现在已经是使用源码构建的spring-boot项目了，哈哈哈哈哈哈哈~~！看老夫手起刀落，干死这个程序！");
+//		System.exit(0);  //干死这个程序用来检验是否真的是用我自己打包出来的源码来开发的spring-boot项目
+
 		ConfigurableApplicationContext context = null;
 		Collection<SpringBootExceptionReporter> exceptionReporters = new ArrayList<>();
 		configureHeadlessProperty();

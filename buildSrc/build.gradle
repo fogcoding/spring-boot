@@ -1,10 +1,19 @@
 plugins {
 	id "java-gradle-plugin"
-	id "io.spring.javaformat" version "${javaFormatVersion}"
+//	id "io.spring.javaformat"
 	id "checkstyle"
 }
 
 repositories {
+	maven {
+		url "http://maven.aliyun.com/nexus/content/groups/public"
+	}
+	maven {
+		url "http://maven.aliyun.com/nexus/content/repositories/jcenter"
+	}
+
+	google()
+
 	mavenCentral()
 	gradlePluginPortal()
 	maven { url "https://repo.spring.io/release" }
@@ -86,5 +95,5 @@ gradlePlugin {
 }
 
 test {
-	useJUnitPlatform()
+//	useJUnitPlatform()
 }

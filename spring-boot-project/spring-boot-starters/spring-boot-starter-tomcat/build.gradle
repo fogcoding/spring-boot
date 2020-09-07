@@ -5,12 +5,31 @@ plugins {
 description = "Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web"
 
 dependencies {
-    api("jakarta.annotation:jakarta.annotation-api")
-	api("org.apache.tomcat.embed:tomcat-embed-core") {
+//    api("jakarta.annotation:jakarta.annotation-api")
+//	api("org.apache.tomcat.embed:tomcat-embed-core") {
+//		exclude group: "org.apache.tomcat", module: "tomcat-annotations-api"
+//	}
+//	api("org.glassfish:jakarta.el")
+//	api("org.apache.tomcat.embed:tomcat-embed-websocket") {
+//		exclude group: "org.apache.tomcat", module: "tomcat-annotations-api"
+//	}
+
+// https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api
+	compile group: 'jakarta.annotation', name: 'jakarta.annotation-api', version: '1.3.5'
+// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+	compile (group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.37')
+	{
 		exclude group: "org.apache.tomcat", module: "tomcat-annotations-api"
 	}
-	api("org.glassfish:jakarta.el")
-	api("org.apache.tomcat.embed:tomcat-embed-websocket") {
+	// https://mvnrepository.com/artifact/org.glassfish/jakarta.el
+	compile group: 'org.glassfish', name: 'jakarta.el', version: '3.0.3'
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket
+	compile (group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.37'){
 		exclude group: "org.apache.tomcat", module: "tomcat-annotations-api"
 	}
+
+
+
+
+
 }
